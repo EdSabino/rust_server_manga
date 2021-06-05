@@ -1,0 +1,36 @@
+[package]
+name = "manga_server"
+version = "0.1.0"
+authors = ["Eduardo Sabino <eduardo@amo.delivery>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "0.4.7"
+diesel = { version = "1.4.4", features = ["postgres"] }
+dotenv = "0.15.0"
+validator = { version = "0.12", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.9.5"
+jsonwebtoken = "7"
+async-trait = "0.1.50"
+fake = { version = "2.4", features=['derive']}
+rand = "0.8"
+multipart = "0.18.0"
+rust-s3 = "0.11.0"
+lazy_static = "1.4.0"
+event-bus = "0.1.0"
+uuid = { version = "0.4", features = ["v4"] }
+redis = "0.20.1"
+tokio = { version = "1.5.0", features = ["full"] }
+
+[dependencies.rocket_contrib]
+version = "0.4.7"
+default-features = false
+features = ["json", "diesel_postgres_pool", "serve"]
+
+[dev-dependencies]
+quickcheck = "1.0.3"
+demonstrate = "0.4.5"
